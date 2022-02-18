@@ -14,9 +14,6 @@ This page shows a live display of COVID-19 Data, examples include the number of 
 - News Articles
 Articles related to COVID-19 from all around the world will be shown in the site, available to be read. The articles displayed are updated live and will always show the most recently-created ones.
 
-### Features Left to Implement
-<!-- - Another feature idea -->
-
 ## Technologies Used
 1. Hypertext Markup Language (HTML)
 It gives a website its content. 
