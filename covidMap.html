@@ -25,7 +25,6 @@
         #map {
             width: 100%;
             height: 100%;
-
         }
     </style>
 
@@ -33,22 +32,15 @@
 
 <body>
     <!-- <div id="data" style="display: none; visibility: hidden;">4343434</div> -->
-    <div id="data"></div>
-
+    <div id="country"></div>
+    <div id="latitude"></div>
+    <div id="longtitude"></div>
+    <div id="country"></div>
 
     <div id="map"></div>
 </body>
 
-
-
 <script type="text/javascript">
-
-    url = 'https://corona.lmao.ninja/v2/countries?yesterday=&sort=';
-        fetch(url)
-            .then(response => response.json())
-            .then(function (data) {
-                covidStats = data;
-            });
 
     var map = L.map('map').setView([2.10890, 126], 3);
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=FFpiI9qMnPMG5hgjwyYR', {
@@ -70,20 +62,49 @@
         popupAnchor: [0, -10] // point from which the popup should open relative to the iconAnchor
     });
 
-    url = 'https://corona.lmao.ninja/v2/countries?yesterday=&sort=';
+    
+    fetch('https://corona.lmao.ninja/v2/countries?yesterday=&sort=')
+    .then(response => response.json())
+    .then(function (data) {
+        data = data;
+
+        //Green circles indicate that a particular country's daily statistics have yet to be updated.
 
 
-    var covidStats = [];
-    fetch(url) 
-        .then(res => res.json())
-        // .then(data =>
-        //     let covidStats = data
-        // )
-        .then((data) => {
-            $("div#data").text(data[0].country);
-        })
+        for (var i = 0; i < data.length; i++) 
+        { 
+            if (data[i].todayCases == 0)
+            {
+                colour = "green"
+            }   
+            else
+            {
+                colour = "red"
+            }
+            L.circle([data[i].countryInfo.lat, data[i].countryInfo.long], {
+                icon: Icon,
+                color: colour,
+                radius: data[i].todayCases * 3,
+                fillOpacity: 0.5
+            }).bindPopup
+            (
+                "<h1>" + data[i].country + "</h1>" +
+                "Today's cases: " + data[i].todayCases
+                + "<br>" + 
+                "Today's deaths: " + data[i].todayDeaths 
+                + "<br>" +
+                "Total cases: " + data[i].cases 
+                + "<br>" +
+                "Total deaths: " + data[i].deaths
+                
+            ).addTo(map);
+            // L.market([points[i][1], points[i][2]]).addTo(map);
+        }
+    });
+    
+    var circle;  
 
-    var circle;    
+
 
     // console.log(covidStats[0].country);
 
@@ -96,17 +117,6 @@
     //         fillOpacity: 0.5
     //     }).bindPopup(points[i][0] + "test").addTo(map);
     // }
-
-    for (var i = 0; i < points.length; i++) {
-        L.circle([points[i][1], points[i][2]], { 
-            icon: Icon,
-            color: 'red',
-            fillColor: '#f03',
-            radius: 50000,
-            fillOpacity: 0.5
-        }).bindPopup(points[i][0] + "test").addTo(map);
-        // L.market([points[i][1], points[i][2]]).addTo(map);
-    }
 
     // L.circle([37.09024, -95.712891], {
     //     icon: Icon,
