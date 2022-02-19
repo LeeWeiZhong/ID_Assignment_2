@@ -42,6 +42,8 @@
 
 <script type="text/javascript">
 
+    alert("Green circles mean countries' data has yet to be updated for today.");
+
     var map = L.map('map').setView([2.10890, 126], 3);
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=FFpiI9qMnPMG5hgjwyYR', {
             tileSize: 512,
@@ -75,16 +77,18 @@
         { 
             if (data[i].todayCases == 0)
             {
-                colour = "green"
+                colour = "green",
+                size = 50000
             }   
             else
             {
                 colour = "red"
+                size = data[i].todayCases * 10
             }
             L.circle([data[i].countryInfo.lat, data[i].countryInfo.long], {
                 icon: Icon,
                 color: colour,
-                radius: data[i].todayCases * 3,
+                radius: size,
                 fillOpacity: 0.5
             }).bindPopup
             (
