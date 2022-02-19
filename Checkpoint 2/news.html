@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <meta name="google" content="notranslate" />
+</head>
+
+<body class="main-body" style="background-color: rgb(37, 37, 37);">
+    <header class="top-bar">
+        <button class="main-title clickable" onclick="window.location.href='index.html'">
+            <span>Covidata</span>
+        </button>
+
+        <nav class="nav-bar">
+            <section class="nav-container">
+                <button class="nav-button clickable" onclick="window.location.href='data.html'">
+                    <span class="nav-text">Data</span>
+                </button>
+                <button class="nav-button clickable" onclick="window.location.href='map.html'">
+                    <span class="nav-text">Map</span>
+                </button>
+                <button class="nav-button clickable" onclick="window.location.href='news.html'">
+                    <span class="nav-text">News</span>
+                </button>
+            </section>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <h2 class="content-title">
+            Covidata News
+        </h2>
+        <p class="content-text">
+            Displayed here are all the latest news about the pandemic and COVID-19 virus, 
+            updated live.
+        </p>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="news.js"></script>
+
+
+
+</body>
+
+</html>

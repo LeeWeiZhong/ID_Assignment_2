@@ -1,0 +1,81 @@
+.clickable:hover {
+    text-shadow: 0px 0px 25px rgb(145, 145, 145);
+}
+
+.main-title {
+    font-size: 30px;
+    background: none;
+    border-style: none;
+}
+
+.main-body {
+    overflow-x: hidden;
+}
+
+.top-bar {
+    overflow: hidden;
+    background-color: #3b3b3b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.main-title {
+    float: left;
+    display: block;
+    color: #f1f3f5;
+    text-align: center;
+    padding: 5px;
+    margin: 20px;
+    margin-left: 40px;
+    text-decoration: none;
+    font-size: 80px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}
+
+.nav-bar {
+    float: right;
+    display: block;
+    text-align: center;
+    margin: 40px;
+    width: 40%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-button {
+    font-size: 45px;
+    font-family: 'Oswald', sans-serif;
+    background: none;
+    border-style: none;
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px;
+    margin-top: 120px;
+}
+
+.content-title {
+    position: relative;
+    top: 25px;
+    color: white;
+    font-size: 50px;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 2px;
+}
+
+.content-text {
+    color: white;
+    font-size: 20px;
+    font-family: 'Arial Rounded MT', sans-serif;
+}
