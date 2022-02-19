@@ -32,5 +32,5 @@ Lee Weizhong: NewsAPI, Leaflet Javascript Library and Javascript for interactive
 ## References
 Home Page "What is Covid-19?: https://en.wikipedia.org/wiki/COVID-19
 
-## Testing
-
+## GitHub Pages link
+https://leeweizhong.github.io/ID_Assignment_2/
