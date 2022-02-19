@@ -25,5 +25,9 @@ It allows the user to interact with the website, besides basic ones like buttons
 Fonts: https://fonts.google.com/
 Normalize.css script: https://necolas.github.io/normalize.css/
 
-### References
+## Contributions
+Ho Jun An: Wireframe, Front-end, visual appearance of site, home page and data/ statistics page
+Lee Weizhong: API and Javascript for interactive map and news articles
+
+## References
 Home Page "What is Covid-19?: https://en.wikipedia.org/wiki/COVID-19
